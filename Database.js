@@ -12,6 +12,6 @@ exports.ExecuteSQL = (req, connection) => {
 
   connection.query(query, function (error, results, fields) {
     if (error) throw error;
-    //console.log("Log added successfully");
+    return true;
   });
 };
