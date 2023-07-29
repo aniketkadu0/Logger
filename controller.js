@@ -21,8 +21,8 @@ exports.addlog = async (req, res, next) => {
     console.log("MySQL connected");
   });
 
-  if (Database.ExecuteSQL(req, connection))
+  if (Database.ExecuteSQL(req, connection)) {
+    connection.end();
     return res.status(200).send({ message: "Successfully logged" });
-
-  connection.end();
+  } else return res.status(200).send({ message: "Error" });
 };
