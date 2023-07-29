@@ -17,7 +17,7 @@ exports.addlog = async (req, res, next) => {
   });
 
   connection.connect((err) => {
-    if (err) console.log(err);
+    if (err) throw err;
     console.log("MySQL connected");
   });
 
