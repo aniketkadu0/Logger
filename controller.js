@@ -23,7 +23,5 @@ exports.addlog = async (req, res, next) => {
 
   await Database.ExecuteSQL(req, connection);
 
-  connection.end();
-
   return await res.status(200).send({ message: "Successfully logged" });
 };
