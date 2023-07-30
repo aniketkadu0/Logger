@@ -13,5 +13,6 @@ exports.ExecuteSQL = async (req, connection) => {
   connection.query(query, function (error, results, fields) {
     if (error) throw error;
     connection.end();
+    console.log("Connection end");
   });
 };
