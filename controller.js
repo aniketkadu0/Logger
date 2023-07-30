@@ -16,7 +16,7 @@ exports.addlog = async (req, res, next) => {
     database: cryptr.decrypt(process.env.DATABASE),
   });
 
-  connection.connect((err) => {
+  await connection.connect((err) => {
     if (err) throw err;
     console.log("MySQL connected");
   });
