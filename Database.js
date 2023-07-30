@@ -10,7 +10,7 @@ exports.ExecuteSQL = async (req, connection) => {
     new Date().toLocaleTimeString().replace(" PM", "")
   }','${req.body.moduleName}','${req.body.machineName}')`;
 
-  connection.query(query, function (error, results, fields) {
+  await connection.query(query, function (error, results, fields) {
     if (error) throw error;
     else {
       connection.end();
