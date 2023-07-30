@@ -25,5 +25,5 @@ exports.addlog = async (req, res, next) => {
 
   connection.end();
 
-  return res.status(200).send({ message: "Successfully logged" });
+  return await res.status(200).send({ message: "Successfully logged" });
 };
