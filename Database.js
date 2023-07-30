@@ -1,4 +1,4 @@
-exports.ExecuteSQL = (req, connection) => {
+exports.ExecuteSQL = async (req, connection) => {
   var query = `INSERT INTO app_logs (eventType,
     userId,description,
     callStack,functionName,
@@ -12,6 +12,5 @@ exports.ExecuteSQL = (req, connection) => {
 
   connection.query(query, function (error, results, fields) {
     if (error) throw error;
-    else return true;
   });
 };
