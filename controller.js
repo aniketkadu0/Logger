@@ -14,7 +14,6 @@ exports.addlog = async (req, res, next) => {
     user: cryptr.decrypt(process.env.USER),
     password: cryptr.decrypt(process.env.PASSWORD),
     database: cryptr.decrypt(process.env.DATABASE),
-    connectTimeout: 99999999,
     timeout: 99999999,
   });
 
