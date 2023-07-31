@@ -11,9 +11,7 @@ exports.ExecuteSQL = async (req, connection) => {
   }','${req.body.moduleName}','${req.body.machineName}')`;
 
   await connection.query(query, function (error, results, fields) {
-    if (!error) {
-      connection.end();
-      console.log("Connection end");
-    }
+    connection.destroy();
+    console.log("Connection end");
   });
 };

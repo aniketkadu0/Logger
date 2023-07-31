@@ -16,6 +16,9 @@ exports.addlog = async (req, res, next) => {
     database: cryptr.decrypt(process.env.DATABASE),
     connectTimeout: 0,
     timeout: 0,
+    connectionLimit: 15,
+    queueLimit: 30,
+    acquireTimeout: 1000000,
   });
 
   await connection.connect((err) => {
